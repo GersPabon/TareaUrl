@@ -1,0 +1,11 @@
+<section *ngIf="nuevaUrl.length > 0">
+  <div class="container">
+    <div class="row">
+      <div *ngFor="let item of nuevaUrl" class="col-lg-4">
+        <img *ngIf="item.tipo == 0" src="{{ item.url }}" class="img-thumbnail" alt="responsive image">
+        <iframe *ngIf="item.tipo == 1" [src]="item.url | safe:'resourceUrl'"></iframe>
+        <button type="button" class="btn btn-danger" (click)="onBorrar(item)">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</section>

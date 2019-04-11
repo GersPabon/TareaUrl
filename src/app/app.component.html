@@ -1,0 +1,27 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!--<div class="jumbotron text-center">
+  <h1>IMÁGENES</h1>
+  <h2><i>URL:</i><input class="form-control" aria-describedby="basic-addon1" placeholder="Agregar enlace"
+      [(ngModel)]="nuevaUrl.url" (keyup.enter)="addUrl()">
+  </h2>
+</div>-->
+
+<app-header (add)="addUrl($event)"></app-header>
+
+
+<!--<section *ngIf="obtenerUrl.length > 0">
+  <div class="container">
+    <div class="row">
+      <div *ngFor="let item of obtenerUrl" class="col-lg-4">
+        <img *ngIf="item.tipo == 0" src="{{ item.url }}" class="img-thumbnail" alt="responsive image">
+        <iframe *ngIf="item.tipo == 1" [src]="item.url | safe:'resourceUrl'"></iframe>
+        <button type="button" class="btn btn-danger" (click)="EliminarUrl(item)">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</section>-->
+
+<app-imagenes (quitar)="EliminarUrl($event)" [nuevaUrl]="obtenerUrl"></app-imagenes>
+
+
+<router-outlet></router-outlet>
